@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <Navigation />
       <h1>Hello NextJs</h1>
-      <Login />
+      {/* <Login /> */}
     </>
   )
 }

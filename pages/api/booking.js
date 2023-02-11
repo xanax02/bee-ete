@@ -13,6 +13,12 @@ const handler = async (req,res) => {
         res.status(201).json({message: 'inserted Successfully'});
     }
 
+    else if(req.method == 'GET')
+    {
+        const results = await bookingCollection.find().toArray();
+        res.status(201).json({message: 'retrived successfully', data: results});
+    }
+
     client.close();
 }
 
