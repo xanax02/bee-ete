@@ -23,6 +23,7 @@ const BookingPage = (props) => {
         }
 
         console.log(details);
+        props.submitBooking(details);
     }
 
   return (
