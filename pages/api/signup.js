@@ -3,14 +3,14 @@ import { MongoClient } from "mongodb";
 export default async function handler(req,res) {
     const client = await MongoClient.connect('mongodb+srv://cronix:6166@cluster0.kwjblrz.mongodb.net/gasbookings?retryWrites=true&w=majority')
     const db = client.db();
-    const { email, password, userType} = req.body;
+    const { email, password, isAdmin} = req.body;
 
     let userCollection;
-    if(userType === 'admin')
+    if(isAdmin)
     {
         userCollection = db.collection('admin');
     }
-    else if(userType === 'user')
+    else
     {
         userCollection = db.collection('user');
     }
