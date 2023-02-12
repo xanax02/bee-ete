@@ -1,11 +1,13 @@
-
-import React, { useState, useRef } from 'react'
+import { useRouter } from 'next/router';
+import { useState, useRef } from 'react'
 
 const Signup = () => {
 
-    const[isAdmin, setIsAdmin] = useState(true);
+    const[isAdmin, setIsAdmin] = useState(false);
     const userName = useRef();
     const password = useRef();
+
+    const router = useRouter();
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -25,6 +27,10 @@ const Signup = () => {
         const data = await response.json();
         console.log(data);
         // console.log(details);
+        if(data)
+        {
+            router.replace("/");
+        }
     }
 
     let buttonData ;
