@@ -17,21 +17,21 @@ const Login = () => {
             isAdmin
         }
 
-        // const response = await fetch('/api/signup', {
-        //     method: 'POST',
-        //     body: JSON.stringify(details),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // // });
-        // const data = await response.json();
-        // console.log(data);
+        const response = await fetch('/api/login    ', {
+            method: 'POST',
+            body: JSON.stringify(details),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        console.log(data);
         // if(data)
         // {
         //     router.replace("/");
         // }
 
-        console.log(details);
+        // console.log(details);
         }
 
     let buttonData ;
