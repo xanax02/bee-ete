@@ -7,8 +7,8 @@ const Navigation = () => {
             <h1>Name of Company</h1>
         </div>
         <div className='flex justify-between px-10'>
-            <h1 className='mx-10'>BUTTON1</h1>
-            <h1 className='mx-10'>BUTTON2</h1>
+            <h1 className='mx-10'>Booking</h1>
+            <h1 className='mx-10'>Logout</h1>
         </div>
     </div>
   )

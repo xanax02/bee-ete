@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Login from '@/components/Login'
 import Navigation from '@/components/Navigation'
+import Signup from '@/components/Signup'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
       <Navigation />
       <h1>Hello NextJs</h1>
+      <Signup />
       {/* <Login /> */}
     </>
   )

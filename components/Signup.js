@@ -2,7 +2,7 @@ import React from 'react'
 
 const Signup = () => {
     return (
-        <div className='outline mx-auto my-24 bg-white text-gray-700 rounded-md'>
+        <div className='w-[600px] outline mx-auto my-24 bg-white text-gray-700 rounded-md'>
             <h2 className='text-center text-4xl'>Sign in</h2>
             <p className='text-center'>(user)</p>
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
