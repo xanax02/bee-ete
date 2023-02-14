@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation'
 import Signup from '@/components/Signup'
 import { useState, useEffect } from 'react'; 
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -15,9 +16,10 @@ export default function Home() {
   const router = useRouter();
   const [isLogged, setIsLogged] = useState(false);
 
+  const auth = useSelector((state) => state.isLogged);
+
   useEffect(() => {
-    
-    if(!isLogged)
+    if(!auth)
     {
       router.replace('/signin')
     }
@@ -34,7 +36,6 @@ export default function Home() {
       <Navigation />
       <h1>Hello NextJs</h1>
       {/* {!<Signup />} */}
-      {!isLogged && <Login />}
     </>
   )
 }

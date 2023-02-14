@@ -1,7 +1,13 @@
 import { useRouter } from 'next/router';
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useDebugValue } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { authActions } from '@/store';
 
 const Login = () => {
+
+    const auth = useSelector((state) => state.isLogged);
+    console.log(auth);
+    const dispatch = useDispatch();
 
     const[isAdmin, setIsAdmin] = useState(false);
     const userName = useRef();
@@ -26,7 +32,15 @@ const Login = () => {
         });
         const data = await response.json();
         console.log(data.message);
-        localStorage.setItem("isLogged", "1");
+        
+        if(data.message === "successful login")
+        {
+            dispatch(authActions.login());
+            router.replace('/')
+            console.log(auth)
+        }
+
+        
         
     }
 
