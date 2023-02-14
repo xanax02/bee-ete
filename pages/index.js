@@ -15,7 +15,7 @@ export default function Home() {
   const router = useRouter();
   const [isLogged, setIsLogged] = useState(false);
 
-  const auth = useSelector((state) => state.isLogged);
+  const auth = useSelector((state) => state.authReducer.isLogged);
 
   useEffect(() => {
     if(!auth)

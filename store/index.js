@@ -13,11 +13,25 @@ const authSlice = createSlice({
     }
 })
 
+const userSlice = createSlice({
+    name: 'user',
+    initialState: {isAdmin: false},
+    reducers: {
+        admin(state) {
+            state.isAdmin = true
+        },
+        user(state) {
+            state.isAdmin = false
+        }
+    }
+})
+
 const store = configureStore({
-    reducer: authSlice.reducer
+    reducer: {authReducer: authSlice.reducer, userReducer: userSlice.reducer}
 });
 
 export const authActions = authSlice.actions;
+export const userActions = userSlice.actions;
 
 export default store;
 

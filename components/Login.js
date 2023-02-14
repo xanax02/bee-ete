@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useRef, useEffect, useDebugValue } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { authActions } from '@/store';
+import { authActions, userActions } from '@/store';
 
 const Login = () => {
 
@@ -36,6 +36,14 @@ const Login = () => {
         if(data.message === "successful login")
         {
             dispatch(authActions.login());
+            if(isAdmin)
+            {
+                dispatch(userActions.admin())
+            }
+            else
+            {
+                dispatch(userActions.user());
+            }
             router.replace('/')
             // console.log(auth)    
         }

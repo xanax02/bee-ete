@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useRef } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { userActions, authActions } from '@/store';
 
 const Signup = () => {
 
@@ -8,6 +10,7 @@ const Signup = () => {
     const password = useRef();
 
     const router = useRouter();
+    const dispatch = useDispatch();
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -29,7 +32,18 @@ const Signup = () => {
         // console.log(details);
         if(data)
         {
-            router.replace("/");
+            if(isAdmin)
+            {
+                dispatch(userActions.admin());
+                dispatch(authActions.login());
+                router.replace('/');
+            }
+            else
+            {
+                dispatch(userActions.user());
+                dispatch(authActions.login());
+                router.replace('/');
+            }
         }
     }
 
