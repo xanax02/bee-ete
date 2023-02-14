@@ -20,8 +20,9 @@ const Navigation = () => {
             <h1>Name of Company</h1>
         </div>
         <div className='flex justify-between px-10'>
-            <h1 className='mx-10'>Booking</h1>
-            <button onClick={logoutHandler}>Logout</button>
+            {auth && <h1 className='mx-10'>Booking</h1>}
+            {auth && <button onClick={logoutHandler}>Logout</button>}
+            {!auth && <button>Signup</button>}
         </div>
     </div>
   )
