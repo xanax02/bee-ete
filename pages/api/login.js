@@ -39,7 +39,6 @@ export default async function helper(req,res)
     {
         const result = await db.collection('user').findOne({email: email});
         if(result)
-        if(result)
         {
             if(result.password === password)
             {
@@ -55,6 +54,4 @@ export default async function helper(req,res)
             res.json({message: 'user not found'})
         }
     }
-
-    res.status(201).json({message: 'userFound, LogedIn'});
 }

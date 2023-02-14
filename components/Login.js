@@ -31,7 +31,7 @@ const Login = () => {
         //     router.replace("/");
         // }
 
-        // console.log(details);
+        console.log(details);
         }
 
     let buttonData ;
