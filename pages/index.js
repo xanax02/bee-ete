@@ -1,14 +1,28 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+// import Image from 'next/image'
+// import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Login from '@/components/Login'
 import Navigation from '@/components/Navigation'
 import Signup from '@/components/Signup'
+import { useState, useEffect } from 'react'; 
+import { useRouter } from 'next/router'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const router = useRouter();
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    
+    if(!isLogged)
+    {
+      router.replace('/signin')
+    }
+  },[])
+
   return (
     <>
       <Head>
@@ -19,8 +33,8 @@ export default function Home() {
       </Head>
       <Navigation />
       <h1>Hello NextJs</h1>
-      {/* <Signup /> */}
-      {/* <Login /> */}
+      {/* {!<Signup />} */}
+      {!isLogged && <Login />}
     </>
   )
 }

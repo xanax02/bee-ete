@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const Login = () => {
 
@@ -25,14 +25,10 @@ const Login = () => {
             }
         });
         const data = await response.json();
-        console.log(data);
-        // if(data)
-        // {
-        //     router.replace("/");
-        // }
-
-        console.log(details);
-        }
+        console.log(data.message);
+        localStorage.setItem("isLogged", "1");
+        
+    }
 
     let buttonData ;
     if(isAdmin)
