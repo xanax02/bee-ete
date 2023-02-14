@@ -37,7 +37,7 @@ const Login = () => {
         {
             dispatch(authActions.login());
             router.replace('/')
-            console.log(auth)
+            // console.log(auth)    
         }
 
         

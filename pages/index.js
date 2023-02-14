@@ -4,7 +4,6 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Login from '@/components/Login'
 import Navigation from '@/components/Navigation'
-import Signup from '@/components/Signup'
 import { useState, useEffect } from 'react'; 
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
@@ -35,7 +34,6 @@ export default function Home() {
       </Head>
       <Navigation />
       <h1>Hello NextJs</h1>
-      {/* {!<Signup />} */}
     </>
   )
 }
