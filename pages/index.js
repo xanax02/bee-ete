@@ -33,7 +33,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
-      <h1>Hello NextJs</h1>
+      {/* <h1>Hello NextJs</h1> */}
+      <h1 className='text-gray-700 text-8xl text-center my-14'>Welcome</h1>
     </>
   )
 }
