@@ -1,6 +1,19 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { authActions } from '@/store';
+import { useRouter } from 'next/router';
 
 const Navigation = () => {
+
+  const router = useRouter();
+  const auth = useSelector((state) => state.isLogged);
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(authActions.logout());
+    router.replace('/signin');
+  }
+
   return (
     <div className='flex justify-between bg-teal-700'>
         <div>
@@ -8,7 +21,7 @@ const Navigation = () => {
         </div>
         <div className='flex justify-between px-10'>
             <h1 className='mx-10'>Booking</h1>
-            <h1 className='mx-10'>Logout</h1>
+            <button onClick={logoutHandler}>Logout</button>
         </div>
     </div>
   )
